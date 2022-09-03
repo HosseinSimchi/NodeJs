@@ -1,0 +1,24 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Hello, My name is Hossein Simchi. This is a simple project using GIT to practice more on NODEJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon e js,html,json index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HosseinSimchi/NodeJs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HosseinSimchi/NodeJs/issues"
+  },
+  "homepage": "https://github.com/HosseinSimchi/NodeJs#readme",
+  "dependencies": {
+    "chalk": "^5.0.1"
+  }
+}
