@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get("/", adminController.callbackHome)
 router.get("/about", adminController.callbackAbout)
+router.get("/contact/:id", adminController.callbackContact)
 router.get("/contact", adminController.callbackContact)
-
 
 module.exports = router;

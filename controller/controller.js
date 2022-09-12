@@ -1,18 +1,20 @@
 const path = require('path');
 const model = require('../model/model');
+const tablePerson = require('../model/model');
 
 person = {
+    id : 25,
     name : "Hossein",
-    family: "Simchi",
-    age: 26
 }
 
-const saveddata = new model.saveData("./data/data.json", JSON.stringify(person))
-
+const createUser = () => {
+    tablePerson.create({name : person.name, id:person.id}).then(response => console.log(response))
+    .catch(err=>console.log(err))
+}
 
 const callbackHome = (req,res) => {
-    saveddata.saveToJsonFile();
-    res.render(path.join(__dirname,"..","views","index.ejs"), {Title : "Home"})
+    createUser()
+    res.render(path.join(__dirname,"..","views","index.ejs"), {Title : "Home", id: req.params.id})
 }
 
 const callbackAbout = (req,res) => {
@@ -20,7 +22,8 @@ const callbackAbout = (req,res) => {
 }
 
 const callbackContact = (req,res) => {
-    res.render(path.join(__dirname,"..","views","contact.ejs"), {Title : "Contact"})
+    
+    res.render(path.join(__dirname,"..","views","contact.ejs"), {Title : "Contact", id: req.params.id})
 }
 
 

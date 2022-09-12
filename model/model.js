@@ -1,16 +1,18 @@
-const fs = require('fs');
+const {DataTypes} = require('sequelize');
+const sequelize = require('../utils/database');
 
-
-
-class saveData {
-    constructor(path, data){
-        this.path = path;
-        this.data = data;
+const tablePerson = sequelize.define("Persons", {
+    id:{
+        type : DataTypes.INTEGER,
+        allowNull : false,
+        primaryKey : true
+    },
+    name:{
+        type : DataTypes.STRING,
+        allowNull: true
     }
+});
 
-    saveToJsonFile(){
-        fs.writeFile(this.path, this.data, (err) => {console.log(err)});
-    }
-}
+module.exports = tablePerson;
 
-module.exports = {saveData};
+
